@@ -2,8 +2,10 @@ package com.example.clockapp.di
 
 import com.example.clockapp.data.clock.ClockRepositoryImpl
 import com.example.clockapp.data.timer.TimerRepoImpl
+import com.example.clockapp.data.tracking.TrackRepoImpl
 import com.example.clockapp.domain.clock.ClockRepo
 import com.example.clockapp.domain.timer.TimerRepo
+import com.example.clockapp.domain.tracking.TrackRepo
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -28,5 +30,10 @@ abstract class RepositoryModule {
         impl: TimerRepoImpl
     ):TimerRepo
 
+    @Binds
+    @Singleton
+    abstract fun bindTrackRepo(
+        impl: TrackRepoImpl
+    ):TrackRepo
 
 }

@@ -11,29 +11,54 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.rememberNavController
 import com.example.clockapp.presentation.components.BottomNavGraph
 import com.example.clockapp.presentation.components.CustomBottomNav
-
+//
+//
+//@Composable
+//fun ClockApp() {
+//    val navController = rememberNavController()
+//
+//    Scaffold(
+////        containerColor = Color.Transparent,
+//        bottomBar = {
+//            CustomBottomNav(navController = navController)
+//
+//        }
+//    ) { innerPadding ->
+//
+//        Box(
+//            modifier = Modifier
+//                .fillMaxSize()
+//                    .background(Color(0xFFEEEEEE))
+//                .padding(innerPadding)
+//        ) {
+//            BottomNavGraph(
+//                navController = navController)
+//
+//        }
+//
+//    }
+//
+//}
 
 @Composable
 fun ClockApp() {
     val navController = rememberNavController()
-
     Scaffold(
+        containerColor = Color.Transparent, // Enable transparency
         bottomBar = {
             CustomBottomNav(navController = navController)
         }
     ) { innerPadding ->
-
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color(0xFFEEEEEE))
-                .padding(innerPadding)
+            // Remove .padding(innerPadding) to ignore scaffold padding
         ) {
             BottomNavGraph(
-                navController = navController)
-
+                navController = navController,
+                innerPadding = innerPadding // Pass padding to nav graph instead
+            )
         }
-
     }
-
 }

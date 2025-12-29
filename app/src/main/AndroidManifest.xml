@@ -28,6 +28,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClockApp"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC8LzBxJqa3I5NuBnl28GMKfL1SzYlbCWg" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -55,6 +60,8 @@
             android:name=".presentation.components.TimerReceiver"
             android:enabled="true"
             android:exported="false"/>
+
+
 
 
     </application>
